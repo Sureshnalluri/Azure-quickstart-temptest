@@ -1,0 +1,32 @@
+name: AVD Deployment
+ 
+on:
+  workflow_dispatch:
+ 
+jobs:
+  AVDDeployment:
+    name: AVD Deployment
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+         azure_client_id: 71d3b401-c7f8-42f5-99e7-e908011c5a0c
+         azure_clientsecret_id: AQA8Q~hESehEGpXrLKnqdutOKUajA6dq-GKgKduk
+         azure_tenant_id: 94f60078-e092-4d05-8f93-b66303119d27
+         azure_subscription_id: 7e30d173-52bf-4223-9827-cd0ea74e3e7f
+                
+      - name: Deploy
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: 7e30d173-52bf-4223-9827-cd0ea74e3e7f
+          scope: 'subscription'
+          region: centralindia
+          template: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/main.bicep
+          parameters: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/azuredeploy.parameters.json 
+          failOnStdErr: false
+      
+            -update "${{ vars.UPDATE }}" `
+            -version "${{ steps.preBuildScript.outputs.LATESTVERSION }}"
+          azPSVersion: "latest"
