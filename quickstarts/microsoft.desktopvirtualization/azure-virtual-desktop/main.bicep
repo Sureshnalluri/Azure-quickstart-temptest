@@ -185,7 +185,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2024-03-01' = {
     osProfile: {
       computerName: virtualMachine.name
       adminUsername: adminUsername
-      adminPassword: !QAZ2wsx3edc!QAZ
+      adminPassword: adminPassword
     }
     diagnosticsProfile: {
       bootDiagnostics: {
