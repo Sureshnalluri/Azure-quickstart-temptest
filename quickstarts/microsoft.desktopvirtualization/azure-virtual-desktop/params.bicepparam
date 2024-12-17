@@ -28,5 +28,5 @@ param virtualMachine = {
 }
 
 param adminUsername = 'azureuser'
-param adminPassword = 'GEN-PASSWORD'
+param adminPassword = '!QAZ2wsx3edc!QAZ'
 param artifactsLocation = 'https://wvdportalstorageblob.blob.core.windows.net/galleryartifacts/Configuration_1.0.02774.414.zip'
