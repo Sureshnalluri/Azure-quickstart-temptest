@@ -22,7 +22,7 @@ jobs:
          
       - name: Deploy Bicep Template 
         run: |
-              az deployment group sub create --resource-group "DefaultResourceGroup-CID" --template-file "./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/main.bicep" 
+              az deployment group create --resource-group "DefaultResourceGroup-CID" --template-file "./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/main.bicep" 
                
      # - name: Deploy
       #  uses: azure/arm-deploy@v1
