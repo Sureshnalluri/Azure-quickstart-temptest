@@ -19,17 +19,21 @@ jobs:
          client-secret: dxX8Q~mxiPTPab7khTYd4VDqqBy6ZKR3bahelbXe
          tenant-id: 94f60078-e092-4d05-8f93-b66303119d27
          subscription-id: 7e30d173-52bf-4223-9827-cd0ea74e3e7f
-                
-      - name: Deploy
-        uses: azure/arm-deploy@v1
-        with:
-          subscriptionId: 7e30d173-52bf-4223-9827-cd0ea74e3e7f
-          scope: 'subscription'
-          region: centralindia
-          template: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/main.bicep
-          parameters: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/params.bicepparam 
-          failOnStdErr: false
+         
+      - name: Deploy Bicep Template 
+        run: |
+              az deployment group sub create --resource-group "DefaultResourceGroup-CID" --template-file "./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/main.bicep" 
+               
+     # - name: Deploy
+      #  uses: azure/arm-deploy@v1
+       # with:
+        #  subscriptionId: 7e30d173-52bf-4223-9827-cd0ea74e3e7f
+         # scope: 'subscription'
+         # region: centralindia
+         # template: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/main.bicep
+         # parameters: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/params.bicepparam 
+         # failOnStdErr: false
       
-            -update "${{ vars.UPDATE }}" `
-            -version "${{ steps.preBuildScript.outputs.LATESTVERSION }}"
-          azPSVersion: "latest"
+        
+
+         
