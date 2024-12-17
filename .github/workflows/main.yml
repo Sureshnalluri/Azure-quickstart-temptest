@@ -27,7 +27,7 @@ jobs:
           scope: 'subscription'
           region: centralindia
           template: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/main.bicep
-          parameters: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/azuredeploy.parameters.json 
+          parameters: ./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/params.bicepparam 
           failOnStdErr: false
       
             -update "${{ vars.UPDATE }}" `
