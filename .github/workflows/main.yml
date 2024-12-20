@@ -15,14 +15,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-         client-id: 2d744331-c049-4e36-adc5-98774408be5c
-         client-secret: dxX8Q~mxiPTPab7khTYd4VDqqBy6ZKR3bahelbXe
-         tenant-id: 94f60078-e092-4d05-8f93-b66303119d27
-         subscription-id: 7e30d173-52bf-4223-9827-cd0ea74e3e7f
+         client-id: ae23c4c6-7082-464f-9a6e-7e1305db0524
+         client-secret: 3ffd9a9b-a925-4164-ba51-e29d746600a9
+         tenant-id: 2450d516-96a7-400d-9229-6445c4dfd62e
+         subscription-id: 039e01ac-5288-42b7-b0ff-bf517c90a8e3
          
       - name: Deploy Bicep Template 
         run: |
-              az deployment group create --resource-group "DefaultResourceGroup-CID" --template-file "./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/main.bicep" --parameters "./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/params.bicepparam"
+              az deployment group create --resource-group "TR-AVD" --template-file "./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/main.bicep" --parameters "./quickstarts/microsoft.desktopvirtualization/azure-virtual-desktop/params.bicepparam"
                
      # - name: Deploy
       #  uses: azure/arm-deploy@v1
