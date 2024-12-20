@@ -11,7 +11,7 @@ param applicationGroupName = 'testdemo-apgroup'
 param workspaceName = 'testdemo-workspace'
 
 param virtualMachine = {
-  name: 'azurevm'
+  name: 'avdtest'
   licenseType: 'Windows_Client'
   vmSize: 'Standard_D2s_v3'
   osDisk: {
